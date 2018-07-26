@@ -32,19 +32,14 @@ export class TutorialPage {
         console.log('Loaded values', values);
         this.slides = [
           {
-            title: values.TUTORIAL_SLIDE1_TITLE,
-            description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-1.png',
+            title: "Diseñado para estudiantes",
+            description: "¿Eres un estudiante a punto de graduarte y buscas una pasantia?",
+            image: 'assets/img/pasantesinit.png',
           },
           {
-            title: values.TUTORIAL_SLIDE2_TITLE,
-            description: values.TUTORIAL_SLIDE2_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-2.png',
-          },
-          {
-            title: values.TUTORIAL_SLIDE3_TITLE,
-            description: values.TUTORIAL_SLIDE3_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-3.png',
+            title: "Para empresas",
+            description: "¿Buscas graduandos para que se interesen en un ofrecimiento de pasantía?",
+            image: 'assets/img/pasantempresa.png',
           }
         ];
       });
@@ -53,7 +48,9 @@ export class TutorialPage {
   startApp() {
     this.navCtrl.setRoot('WelcomePage', {}, {
       animate: true,
-      direction: 'forward'
+      animation: 'wp-transition', //AQUI LE AMBIE EL TIPO DE ANIMACION PERO SINO SIMPLEMENTE
+      duration:500 // HAY QUE BORRAR ESTAS DOS LINEAS Y DEJAR LA SIGUIENTE
+      //direction: 'forward'
     });
   }
 

@@ -1,7 +1,7 @@
 <ion-header no-shadow>
   <ion-navbar>
     <ion-buttons end *ngIf="showSkip">
-      <button ion-button (click)="startApp()" color="primary">{{ 'TUTORIAL_SKIP_BUTTON' | translate}}</button>
+      <button ion-button (click)="startApp()" color="primary">SALTAR</button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -14,12 +14,19 @@
       <p [innerHTML]="slide.description"></p>
     </ion-slide>
     <ion-slide>
-      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />
-      <h2 class="slide-title">{{ 'TUTORIAL_SLIDE4_TITLE' | translate }}</h2>
-      <button ion-button icon-end large clear (click)="startApp()">
-        {{ 'TUTORIAL_CONTINUE_BUTTON' | translate }}
-        <ion-icon name="arrow-forward"></ion-icon>
-      </button>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 col-xl-6 offset-xl-3>
+            <img src="assets/img/ica-slidebox-img-3.png" class="slide-image" />
+            <h2 class="slide-title">¡Atrévete a volar!</h2>
+            <br>
+            <br>
+            <button ion-button icon-end outline color="secondary" (click)="startApp()">¿COMENZAMOS?
+              <ion-icon name="arrow-forward"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
     </ion-slide>
   </ion-slides>
 </ion-content>
