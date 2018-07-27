@@ -7,8 +7,27 @@
       El punto de partida para tu gran experiencia
     </div>
   </div>
-  <div padding>
-    <button ion-button block (click)="signup()">REGISTRARSE</button>
-    <button ion-button block (click)="login()" class="login">INICIAR SESION</button>
+  <div padding margin=10px>
+    <form method="post" >
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>Email</ion-label>
+          <ion-input type="email" [(ngModel)]="account.email" name="email" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="account.password" name="password" ></ion-input>
+        </ion-item>
+        <button ion-button block class="login" (click)="doLogin()">INICIAR SESIÓN</button>
+      </ion-list>
+    </form>
   </div>
+  <ion-col>
+  <div class="div-bg">
+    <br>
+    <p class="parrafo" col-4 offset-4 >¿Aún no tienes una cuenta? Crea una nueva</p>
+    <br>
+    <button ion-button col-4 offset-4 outline block color="light" (click)="signup()">REGISTRARSE</button>
+  </div>
+</ion-col>
 </ion-content>

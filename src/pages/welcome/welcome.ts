@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
-
+import { IonicPage, NavController, ToastController  } from 'ionic-angular';
+import { MainPage } from '../';
+import { User } from '../../providers';
 /**
  * The Welcome Page is a splash page that quickly describes the app,
  * and then directs the user to create an account or log in.
@@ -13,11 +14,30 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'welcome.html'
 })
 export class WelcomePage {
+  account: { email: string, password: string } = {
+    email: 'hello',
+    password: 'world'
+  };
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController,
+    public user: User,
+    public toastCtrl: ToastController,) {
 
-  login() {
-    this.navCtrl.push('LoginPage');
+  }
+
+  doLogin() {
+    this.user.login(this.account).subscribe((resp) => {
+      this.navCtrl.push(MainPage);
+    }, (err) => {
+      this.navCtrl.push(MainPage);
+      // Unable to log in
+      let toast = this.toastCtrl.create({
+        message: "No se ha podido establecer sesion",
+        duration: 1000,
+        position: 'top'
+      });
+      toast.present();
+    });
   }
 
   signup() {

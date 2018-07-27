@@ -37,7 +37,7 @@ export class TutorialPage {
             image: 'assets/img/pasantesinit.png',
           },
           {
-            title: "Para empresas",
+            title: "Y para empresas también ",
             description: "¿Buscas graduandos para que se interesen en un ofrecimiento de pasantía?",
             image: 'assets/img/pasantempresa.png',
           }
